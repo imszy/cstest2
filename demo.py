@@ -10,10 +10,13 @@ times = a * b
 print(f"{a} * {b} = {times}")
 
 # 用户输入两个数字并输出它们的和
-a_input = int(input("请输入第一个数字: "))
-b_input = int(input("请输入第二个数字: "))
-sum_input = a_input + b_input
-print(f"{a_input} + {b_input} = {sum_input}")
+try:
+    a_input = int(input("请输入第一个数字: "))
+    b_input = int(input("请输入第二个数字: "))
+    sum_input = a_input + b_input
+    print(f"{a_input} + {b_input} = {sum_input}")
+except ValueError:
+    print("输入无效，请输入整数！")
 
 # 循环打印1到5
 print(f"循环打印1到5：")
@@ -36,11 +39,17 @@ def check_even_odd(num):
         print(f"{num} 是奇数")
 
 # 用户输入两个数字并输出它们的乘积
-x_input = int(input("请输入要相乘的第一个数字: "))
-y_input = int(input("请输入要相乘的第二个数字: "))
-product = multiply(x_input, y_input)
-print(f"{x_input} * {y_input} = {product}")
+try:
+    x_input = int(input("请输入要相乘的第一个数字: "))
+    y_input = int(input("请输入要相乘的第二个数字: "))
+    product = multiply(x_input, y_input)
+    print(f"{x_input} * {y_input} = {product}")
+except ValueError:
+    print("输入无效，请输入整数！")
 
 # 判断用户输入的数字奇偶
-num_check = int(input("请输入一个数字判断奇偶: "))
-check_even_odd(num_check) 
+try:
+    num_check = int(input("请输入一个数字判断奇偶: "))
+    check_even_odd(num_check)
+except ValueError:
+    print("输入无效，请输入整数！") 
