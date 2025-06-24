@@ -52,4 +52,26 @@ try:
     num_check = int(input("请输入一个数字判断奇偶: "))
     check_even_odd(num_check)
 except ValueError:
-    print("输入无效，请输入整数！") 
+    print("输入无效，请输入整数！")
+
+import random
+
+def guess_number_game():
+    print("\n欢迎来到猜数字游戏！我已经选好了1到100之间的一个数字。来试试你能几次猜中吧！")
+    answer = random.randint(1, 100)
+    attempts = 0
+    while True:
+        try:
+            guess = int(input("请输入你的猜测（1-100）："))
+            attempts += 1
+            if guess < answer:
+                print("太小了！")
+            elif guess > answer:
+                print("太大了！")
+            else:
+                print(f"恭喜你，猜对了！答案就是 {answer}，你一共猜了 {attempts} 次。\n")
+                break
+        except ValueError:
+            print("输入无效，请输入整数！")
+
+guess_number_game() 
