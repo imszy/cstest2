@@ -74,4 +74,20 @@ def guess_number_game():
         except ValueError:
             print("输入无效，请输入整数！")
 
-guess_number_game() 
+guess_number_game()
+
+def file_write_read():
+    print("\n文件读写演示：")
+    text = input("请输入一段文本，将写入文件output.txt：")
+    try:
+        with open("output.txt", "w", encoding="utf-8") as f:
+            f.write(text)
+        print("内容已写入output.txt。")
+        with open("output.txt", "r", encoding="utf-8") as f:
+            content = f.read()
+        print("文件内容如下：")
+        print(content)
+    except Exception as e:
+        print(f"文件操作出错：{e}")
+
+file_write_read() 
